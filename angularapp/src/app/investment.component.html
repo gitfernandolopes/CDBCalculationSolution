@@ -1,0 +1,14 @@
+<div>
+  <h2>Calculadora de Investimento CDB</h2>
+  <label for="initialValue">Valor Inicial:</label>
+  <input type="number" id="initialValue" [(ngModel)]="initialValue" />
+  <label for="months">Meses:</label>
+  <input type="number" id="months" [(ngModel)]="months" />
+  <button (click)="calculateInvestment()">Calcular</button>
+</div>
+<div *ngIf="grossResult !== undefined">
+  <h3>Resultados:</h3>
+  <p>Resultado Bruto: {{ grossResult | currency }}</p>
+  <p>Resultado Líquido: {{ netResult | currency }}</p>
+</div>
+
