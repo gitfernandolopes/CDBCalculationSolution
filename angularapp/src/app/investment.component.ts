@@ -11,7 +11,13 @@ export class InvestmentComponent {
   grossResult: number;
   netResult: number;
 
-  constructor(private investmentService: InvestmentService) { }
+  constructor(private investmentService: InvestmentService)
+  {
+    this.initialValue = 0;
+    this.months = 0;
+    this.grossResult = 0;
+    this.netResult = 0;
+  }
 
   calculateInvestment(): void {
     this.investmentService.calculateInvestment(this.initialValue, this.months)
