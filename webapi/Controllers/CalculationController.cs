@@ -1,7 +1,5 @@
 ﻿using CDBCalculationApi.Interfaces;
 using CDBCalculationApi.Models;
-using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Web.Http;
 using FromBodyAttribute = Microsoft.AspNetCore.Mvc.FromBodyAttribute;
 using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
