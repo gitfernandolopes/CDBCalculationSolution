@@ -22,23 +22,20 @@ namespace CDBCalculationApi.Services
                     throw new InvestmentCalculatorException("Valores de entrada inválidos.");
                 }
 
-                double currentPrincipal = data.InitialValue;
-                double grossResult = currentPrincipal;
-                double netResult = currentPrincipal;
-
+                double grossResult = data.InitialValue; 
+                
                 for (int i = 0; i < data.Months; i++)
                 {
-                    grossResult = currentPrincipal * (1 + CDI * TB);
-                    double taxRate = GetTaxRate(i + 1);
-                    netResult = grossResult * (1 - taxRate);
-
-                    currentPrincipal = netResult;
+                    grossResult *= (1 + (CDI * TB));                    
                 }
+
+                double taxRate = GetTaxRate(data.Months);
+                double netResult = grossResult * (1 - taxRate);
 
                 InvestmentResult result = new()
                 {
-                    GrossResult = grossResult,
-                    NetResult = netResult
+                    GrossResult = Math.Round(grossResult, 2),
+                    NetResult = Math.Round(netResult, 2)
                 };
 
                 return result;
