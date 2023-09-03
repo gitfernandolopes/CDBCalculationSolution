@@ -9,10 +9,15 @@ namespace CDBCalculationApi.Interfaces
 
     public class CdiInvestmentCalculator : IInvestmentCalculator
     {
+        private static readonly double TB = 1.08;
+        private static readonly double CDI = 0.009;
+        private static readonly double TaxRate6Months = 0.225;
+        private static readonly double TaxRate12Months = 0.2;
+        private static readonly double TaxRate24Months = 0.175;
+        private static readonly double DefaultTaxRate = 0.15;
+
         public InvestmentResult Calculate(InvestmentData data)
         {
-            const double TB = 1.08;
-            const double CDI = 0.009;
             double currentPrincipal = data.InitialValue;
             double grossResult = currentPrincipal;
             double netResult = currentPrincipal;
@@ -34,16 +39,15 @@ namespace CDBCalculationApi.Interfaces
 
             return result;
         }
-        
+
         private double GetTaxRate(int months)
         {
-            if (months <= 6) return 0.225;
-            if (months <= 12) return 0.2;
-            if (months <= 24) return 0.175;
-            return 0.15;
+            if (months <= 6) return TaxRate6Months;
+            if (months <= 12) return TaxRate12Months;
+            if (months <= 24) return TaxRate24Months;
+            return DefaultTaxRate;
         }
     }
-
 }
 
 
