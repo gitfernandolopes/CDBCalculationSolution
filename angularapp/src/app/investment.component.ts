@@ -3,7 +3,7 @@ import { InvestmentService } from './investment.service';
 
 @Component({
   selector: 'app-investment',
-  templateUrl: './investment.component.html',
+  templateUrl: './investment.component.html'
 })
 export class InvestmentComponent {
   initialValue: number;
@@ -11,8 +11,7 @@ export class InvestmentComponent {
   grossResult: number;
   netResult: number;
 
-  constructor(private investmentService: InvestmentService)
-  {
+  constructor(private investmentService: InvestmentService) {
     this.initialValue = 0;
     this.months = 0;
     this.grossResult = 0;
@@ -27,3 +26,4 @@ export class InvestmentComponent {
       });
   }
 }
+
