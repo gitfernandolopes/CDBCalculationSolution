@@ -11,8 +11,8 @@ namespace CDBCalculationApi.Tests
         public void Calculate_CalculatesInvestmentCorrectly()
         {
 
-            CDIInvestmentCalculator calculator = new CDIInvestmentCalculator();
-            InvestmentData data = new InvestmentData
+            CdiInvestmentCalculator calculator = new();
+            InvestmentData data = new()
             {
                 InitialValue = 1000,
                 Months = 12
@@ -27,15 +27,15 @@ namespace CDBCalculationApi.Tests
         [Test]
         public void Calculate_CalculatesInvestmentWithDifferentValues()
         {
-            CDIInvestmentCalculator calculator = new CDIInvestmentCalculator();
+            CdiInvestmentCalculator calculator = new();
 
-            InvestmentData data1 = new InvestmentData
+            InvestmentData data1 = new()
             {
                 InitialValue = 2000,
                 Months = 6
             };
 
-            InvestmentData data2 = new InvestmentData
+            InvestmentData data2 = new()
             {
                 InitialValue = 5000,
                 Months = 24

@@ -7,7 +7,7 @@ namespace CDBCalculationApi.Interfaces
         InvestmentResult Calculate(InvestmentData data);
     }
 
-    public class CDIInvestmentCalculator : IInvestmentCalculator
+    public class CdiInvestmentCalculator : IInvestmentCalculator
     {
         public InvestmentResult Calculate(InvestmentData data)
         {
@@ -26,7 +26,7 @@ namespace CDBCalculationApi.Interfaces
                 currentPrincipal = netResult;
             }
 
-            InvestmentResult result = new InvestmentResult
+            InvestmentResult result = new()
             {
                 GrossResult = grossResult,
                 NetResult = netResult
