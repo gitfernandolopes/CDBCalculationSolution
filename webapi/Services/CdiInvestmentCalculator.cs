@@ -53,7 +53,7 @@ namespace CDBCalculationApi.Services
             }
         }
 
-        private double GetTaxRate(int months)
+        public double GetTaxRate(int months)
         {
             if (months <= 6) return TaxRate6Months;
             if (months <= 12) return TaxRate12Months;
