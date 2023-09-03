@@ -1,5 +1,5 @@
 using CDBCalculationApi.Interfaces;
-using CDBCalculatorApi.Controllers;
+using CDBCalculationApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
