@@ -34,8 +34,8 @@ namespace CDBCalculationApi.Services
 
                 InvestmentResult result = new()
                 {
-                    GrossResult = Math.Round(grossResult, 2),
-                    NetResult = Math.Round(netResult, 2)
+                    GrossResult = grossResult,
+                    NetResult = netResult,
                 };
 
                 return result;
