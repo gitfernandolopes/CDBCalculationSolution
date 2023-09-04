@@ -40,15 +40,14 @@ You can use the API to calculate the gross and net yield of a CDB investment by 
 - URL: `https://localhost:5001/api/calculation/calculate` (or `http://localhost:5000/api/calculation/calculate`)
 - Request Body (JSON):
 
-```json
 {
 "initialValue": 1000.0,
 "months": 12
 }
 
-[initialValue: The initial investment (must be a positive value).
+initialValue: The initial investment (must be a positive value).
 months: The investment duration in months for redemption (must be greater than 0).
-The API response will include the gross and net yield of the investment in JSON format:]
+The API response will include the gross and net yield of the investment in JSON format:
 
 {
   "grossResult": 1104.71,
