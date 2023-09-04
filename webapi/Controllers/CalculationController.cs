@@ -2,7 +2,6 @@
 using CDBCalculationApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace CDBCalculatorApi.Controllers
 {
 

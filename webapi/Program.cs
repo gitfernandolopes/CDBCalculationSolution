@@ -2,7 +2,15 @@ using CDBCalculationApi.Interfaces;
 using CDBCalculationApi.Services;
 using Microsoft.OpenApi.Models;
 
+using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(p => p.AddPolicy("corspolicy", build =>
+{
+    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -21,6 +29,9 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddScoped<IInvestmentCalculator, CdiInvestmentCalculator>();
 
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,6 +43,8 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "CDBCalculationApi.v1");
     });
 }
+
+app.UseCors("corspolicy");
 
 app.UseHttpsRedirection();
 

@@ -1,23 +1,23 @@
 <div class="calculator">
-  <h2>Calculadora de Investimento CDB</h2>
+  <h2>CDB Investment Calculator</h2>
   <form (ngSubmit)="calculateInvestment()" #investmentForm="ngForm">
     <div class="form-group">
-      <label for="initialValue">Valor Inicial (R$):</label>
+      <label for="initialValue">Initial Value:</label>
       <input type="number" id="initialValue" name="initialValue" [(ngModel)]="initialValue" required />
     </div>
     <div class="form-group">
-      <label for="months">Prazo (meses):</label>
+      <label for="months">Months:</label>
       <input type="number" id="months" name="months" [(ngModel)]="months" required />
     </div>
-    <button type="submit">Calcular</button>
+    <button type="submit">Calculate</button>
   </form>
   <div *ngIf="investmentForm.submitted && investmentForm.invalid">
-    <p class="error-message">Por favor, preencha todos os campos corretamente.</p>
+    <p class="error-message">Please fill in all fields correctly.</p>
   </div>
   <div class="results" *ngIf="grossResult !== undefined">
-    <h3>Resultados:</h3>
-    <p>Resultado Bruto: {{ grossResult | currency }}</p>
-    <p>Resultado Líquido: {{ netResult | currency }}</p>
+    <h3>Results:</h3>
+    <p>Raw score: {{ grossResult | currency }}</p>
+    <p>Net score: {{ netResult | currency }}</p>
   </div>
 </div>
 

@@ -19,7 +19,7 @@ namespace CDBCalculationApi.Services
             {
                 if (data.InitialValue <= 0 || data.Months <= 0)
                 {
-                    throw new InvestmentCalculatorException("Valores de entrada inválidos.");
+                    throw new InvestmentCalculatorException("Invalid input values.");
                 }
 
                 double grossResult = data.InitialValue; 
@@ -46,7 +46,7 @@ namespace CDBCalculationApi.Services
             }
             catch (Exception)
             {
-                throw new InvestmentCalculatorException("Erro interno no cálculo do investimento.");
+                throw new InvestmentCalculatorException("Internal error in investment calculation.");
             }
         }
 
