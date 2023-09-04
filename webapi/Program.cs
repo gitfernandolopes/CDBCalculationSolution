@@ -11,12 +11,12 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "API de Cálculo do CDB",
+        Title = "CDB Calculation API",
         Version = "v1",
-        Description = "Esta API permite calcular o rendimento bruto e líquido de um investimento em CDB com base em parâmetros fornecidos. " +
-                      "Os valores de entrada são:\n" +
-                      "- 'initialValue': O valor inicial do investimento em reais (deve ser um valor positivo).\n" +
-                      "- 'months': O prazo em meses para resgate do investimento (deve ser maior que 1).",
+        Description = "This API allows you to calculate the gross and net yield of a CDB investment based on provided parameters. " +
+                  "The input values include:\n" +
+                  "- 'initialValue': The initial investment amount in Brazilian Reais (must be a positive value).\n" +
+                  "- 'months': The investment duration in months for redemption (must be greater than 1).",
     });
 });
 builder.Services.AddScoped<IInvestmentCalculator, CdiInvestmentCalculator>();
