@@ -17,20 +17,26 @@ namespace CDBCalculationApi.Services
         {
             try
             {
-                if (data.InitialValue <= 0 || data.Months <= 0)
+                if (data.InitialValue <= 0)
                 {
-                    throw new InvestmentCalculatorException("Invalid input values.");
+                    throw new InvestmentCalculatorException("The initial investment value must be a positive amount!");
                 }
 
-                double grossResult = data.InitialValue; 
-                
+                if (data.Months <= 1)
+                {
+                    throw new InvestmentCalculatorException("The redemption period for the investment must be greater than 1 month");
+                }
+
+                double grossResult = data.InitialValue;
+
                 for (int i = 0; i < data.Months; i++)
                 {
-                    grossResult *= (1 + (CDI * TB));                    
+                    grossResult *= (1 + (CDI * TB));
                 }
 
                 double taxRate = GetTaxRate(data.Months);
-                double netResult = grossResult * (1 - taxRate);
+                double earnings = grossResult - data.InitialValue;
+                double netResult = earnings * (1 - taxRate);
 
                 InvestmentResult result = new()
                 {

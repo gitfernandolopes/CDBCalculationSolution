@@ -23,7 +23,7 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1",
         Description = "This API allows you to calculate the gross and net yield of a CDB investment based on provided parameters. " +
                   "The input values include:\n" +
-                  "- 'initialValue': The initial investment amount in Brazilian Reais (must be a positive value).\n" +
+                  "- 'initialValue': The initial investment amount (must be a positive value).\n" +
                   "- 'months': The investment duration in months for redemption (must be greater than 1).",
     });
 });

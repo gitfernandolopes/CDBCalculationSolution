@@ -25,8 +25,23 @@ namespace CDBCalculationApi.Tests
             // Verify if the gross result (GrossResult) is close to 107.0056502195483
             Assert.Equal(107.01, result.GrossResult, 2);
 
-            // Verify if the net result (NetResult) is close to 85.60452017563864
-            Assert.Equal(85.60, result.NetResult, 2);
+            // Verify if the net result (NetResult) is close to 5.6045201756386405
+            Assert.Equal(5.60, result.NetResult, 2);
+        }
+
+        [Fact]
+        public void Calculate_WithOneMonth_ThrowsInvestmentCalculatorException()
+        {
+            // Arrange
+            IInvestmentCalculator calculator = new CdiInvestmentCalculator();
+            InvestmentData data = new()
+            {
+                InitialValue = 1000,
+                Months = 1   // month less than or equal to 1, throws exception
+            };
+
+            // Act & Assert
+            Assert.Throws<InvestmentCalculatorException>(() => calculator.Calculate(data));
         }
 
         [Fact]
