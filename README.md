@@ -60,7 +60,7 @@ API Documentation
 API documentation is available using Swagger. You can access it by navigating to https://localhost:5001/swagger (or http://localhost:5000/swagger) in your browser
 
 Additional Notes
-The CORS policy has been configured to allow all origins (*). In a production environment, adjust this configuration as needed to enhance security.
+In a production environment, adjust this configuration as needed to enhance security.
 Be sure to handle errors appropriately in your application, especially the exceptions defined in the code, such as InvestmentCalculatorException.
 You are now ready to run the CDB Calculation API solution in a local environment.
 
