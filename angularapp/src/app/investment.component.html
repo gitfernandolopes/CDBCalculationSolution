@@ -3,11 +3,21 @@
   <form (ngSubmit)="calculateInvestment()" #investmentForm="ngForm">
     <div class="form-group">
       <label for="initialValue">Initial Value:</label>
-      <input type="number" id="initialValue" name="initialValue" [(ngModel)]="initialValue" required />
+      <input type="text"
+             id="initialValue"
+             name="initialValue"
+             [(ngModel)]="initialValue"
+             required
+             maxlength="15" />
     </div>
     <div class="form-group">
       <label for="months">Months:</label>
-      <input type="number" id="months" name="months" [(ngModel)]="months" required />
+      <input type="text"
+             id="months"
+             name="months"
+             [(ngModel)]="months"
+             required
+             maxlength="3" />
     </div>
     <button type="submit">Calculate</button>
   </form>

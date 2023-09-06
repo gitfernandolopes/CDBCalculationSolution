@@ -31,7 +31,7 @@ label {
   color: #333;
 }
 
-input[type="number"] {
+input[type="text"] {
   width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
