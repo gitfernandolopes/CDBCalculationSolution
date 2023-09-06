@@ -13,4 +13,3 @@ export class InvestmentService {
     return this.http.post('/api/calculation/calculate', data)
   }
 }
-
