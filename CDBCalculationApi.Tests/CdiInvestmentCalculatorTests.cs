@@ -25,8 +25,8 @@ namespace CDBCalculationApi.Tests
             // Verify if the gross result (GrossResult) is close to 107.0056502195483
             Assert.Equal(107.01, result.GrossResult, 2);
 
-            // Verify if the net result (NetResult) is close to 5.6045201756386405
-            Assert.Equal(5.60, result.NetResult, 2);
+            // Verify if the net result (NetResult) is close to 105.60452017563864
+            Assert.Equal(105.60, result.NetResult, 2);
         }
 
         [Fact]

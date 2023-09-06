@@ -36,7 +36,7 @@ namespace CDBCalculationApi.Services
 
                 double taxRate = GetTaxRate(data.Months);
                 double earnings = grossResult - data.InitialValue;
-                double netResult = earnings * (1 - taxRate);
+                double netResult = data.InitialValue + earnings * (1 - taxRate);
 
                 InvestmentResult result = new()
                 {

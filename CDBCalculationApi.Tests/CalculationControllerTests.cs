@@ -16,7 +16,7 @@ namespace CDBCalculationApi.Tests
             calculatorMock.Setup(c => c.Calculate(It.IsAny<InvestmentData>())).Returns(new InvestmentResult
             {
                 GrossResult = 107.01,
-                NetResult = 5.60
+                NetResult = 105.60
             });
             var controller = new CalculationController(calculatorMock.Object);
             var data = new InvestmentData { InitialValue = 100, Months = 7 };
@@ -29,7 +29,7 @@ namespace CDBCalculationApi.Tests
             var investmentResult = result.Value as InvestmentResult;
             Assert.NotNull(investmentResult);
             Assert.Equal(107.01, investmentResult.GrossResult, 2);
-            Assert.Equal(5.60, investmentResult.NetResult, 2);
+            Assert.Equal(105.60, investmentResult.NetResult, 2);
         }
     }
 }
