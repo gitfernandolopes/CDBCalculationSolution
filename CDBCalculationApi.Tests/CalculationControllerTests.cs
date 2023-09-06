@@ -1,12 +1,8 @@
-﻿using CDBCalculationApi.Exceptions;
-using CDBCalculationApi.Interfaces;
+﻿using CDBCalculationApi.Interfaces;
 using CDBCalculationApi.Models;
-using CDBCalculationApi.Services;
 using CDBCalculatorApi.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System;
-using Xunit;
 
 namespace CDBCalculationApi.Tests
 {
