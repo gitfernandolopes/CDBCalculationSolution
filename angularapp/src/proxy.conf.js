@@ -1,10 +1,14 @@
 const PROXY_CONFIG = [
   {
     context: [
-      "/calculation",
+      "/api",
     ],
-    target: "https://localhost:7055",
-    secure: false
+    target: "https://localhost:44300/",
+    secure: false,
+    changeOrigin: true,
+    pathRewrite: {
+      "^/": ""
+    }
   }
 ]
 

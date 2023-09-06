@@ -7,7 +7,7 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "CDBCalculationApp", "angula
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CDBCalculationApi", "webapi\CDBCalculationApi.csproj", "{173B9345-35B5-4A2A-A1F3-2CE7C60FC339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDBCalculationApi.Tests", "CDBCalculationApi.Tests\CDBCalculationApi.Tests.csproj", "{D7DDC171-B421-41B1-B95C-7ECD33265D0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CDBCalculationApi.Tests", "CDBCalculationApi.Tests\CDBCalculationApi.Tests.csproj", "{D7DDC171-B421-41B1-B95C-7ECD33265D0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
