@@ -109,6 +109,8 @@ Here is an overview of the test cases available in the `CdiInvestmentCalculatorT
 
 - `GetTaxRate_ReturnsCorrectTaxRate`: Tests the calculation of tax rates for different numbers of months.
 
+- `Calculate_WithValidData_ReturnsOkResult`: Tests the Calculate method in the CalculationController class with valid input data and checks if it returns an OK result with the correct investment results.
+
 ## Test Output
 
 The test output includes information about each test case, including whether it passed or failed. The output will also display any error messages or exceptions if a test fails.
