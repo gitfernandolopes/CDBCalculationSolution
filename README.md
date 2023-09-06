@@ -111,18 +111,5 @@ Here is an overview of the test cases available in the `CdiInvestmentCalculatorT
 
 - `Calculate_WithValidData_ReturnsOkResult`: Tests the Calculate method in the CalculationController class with valid input data and checks if it returns an OK result with the correct investment results.
 
-## Test Output
-
-The test output includes information about each test case, including whether it passed or failed. The output will also display any error messages or exceptions if a test fails.
-
-Make sure to review the test output to ensure the correctness of the API calculations and error handling.
-
-## Additional Notes
-
-- The tests are designed to cover various scenarios and edge cases to ensure the robustness of the CDB Calculation API.
-
-- If you encounter any issues or failures during testing, refer to the error messages and the test code for debugging and troubleshooting.
-
-- Ensure that the API and its dependencies are properly configured before running the tests.
 
 
