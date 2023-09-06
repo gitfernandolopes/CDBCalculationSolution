@@ -1,4 +1,5 @@
-﻿using CDBCalculationApi.Interfaces;
+﻿using CDBCalculationApi.Exceptions;
+using CDBCalculationApi.Interfaces;
 using CDBCalculationApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,9 +20,24 @@ namespace CDBCalculatorApi.Controllers
         [HttpPost("calculate")]
         public IActionResult Calculate([FromBody] InvestmentData data)
         {
-            var result = _investmentCalculator.Calculate(data);
+            if (data == null)
+            {
+                return BadRequest("Invalid data!");
+            }
 
-            return Ok(result);
+            try
+            {
+                var result = _investmentCalculator.Calculate(data);
+                return Ok(result);
+            }
+            catch (InvestmentCalculatorException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Internal server error occurred.");
+            }
         }
     }
 
