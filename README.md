@@ -51,7 +51,7 @@ The API response will include the gross and net yield of the investment in JSON 
 
 {
   "grossResult": 107.01,
-  "netResult": 5.60
+  "netResult": 105.60
 }
 
 Remember to adjust security and production settings before deploying the API to a production environment.
