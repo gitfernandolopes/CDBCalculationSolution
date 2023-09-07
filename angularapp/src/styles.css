@@ -1,18 +1,13 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
 .calculator {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 h2 {
@@ -23,53 +18,66 @@ h2 {
 
 .form-group {
   margin-bottom: 15px;
+  display: flex; 
+  align-items: center; 
 }
 
-label {
-  display: block;
+.label {
   font-weight: bold;
   color: #333;
+  font-size: 16px;
+  flex: 1; 
+  text-align: right; 
+  padding-right: 10px; 
 }
 
-input[type="text"] {
-  width: 90%;
+.input {
+  width: 70%; 
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-family: Arial, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-button {
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px; 
+}
+
+.button {
   background-color: #007bff;
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-family: Arial, sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-  button:hover {
-    background-color: #0056b3;
-  }
+.button:hover {
+  background-color: #0056b3;
+}
 
-.error-message {
+.error {
   color: red;
-  font-size: 14px;
+  font-size: 20px;
   margin-top: 10px;
+  display: block;
+}
+
+.green-text {
+  color: green;
 }
 
 .results {
   margin-top: 20px;
 }
 
-h3 {
-  font-size: 20px;
+.results p {
+  font-size: 18px;
   color: #333;
-}
-
-p {
-  font-size: 16px;
-  color: #666;
-  font-family: Arial, sans-serif;
 }

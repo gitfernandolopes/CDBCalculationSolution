@@ -1,34 +1,25 @@
 <div class="calculator">
   <h2>CDB Investment Calculator</h2>
-  <form (ngSubmit)="calculateInvestment()" #investmentForm="ngForm">
-    <div class="form-group">
-      <label for="initialValue">Initial Value:</label>
-      <input type="text"
-             id="initialValue"
-             name="initialValue"
-             [(ngModel)]="initialValue"
-             required
-             maxlength="15" />
-    </div>
-    <div class="form-group">
-      <label for="months">Months:</label>
-      <input type="text"
-             id="months"
-             name="months"
-             [(ngModel)]="months"
-             required
-             maxlength="3" />
-    </div>
-    <button type="submit">Calculate</button>
-  </form>
-  <div *ngIf="investmentForm.submitted && investmentForm.invalid">
-    <p class="error-message">Please fill in all fields correctly.</p>
+  <div class="form-group">
+    <label for="initialValue" class="label">Initial Value:</label>
+    <input [ngModel]="initialValue" (ngModelChange)="onInitialValueChange($event)" type="number" id="initialValue" class="input" required>
+    <div *ngIf="!isValidInput(initialValue)" class="error"></div>
   </div>
-  <div class="results" *ngIf="grossResult !== undefined">
-    <h3>Results:</h3>
-    <p>Raw score: {{ grossResult | currency }}</p>
-    <p>Net score: {{ netResult | currency }}</p>
+  <div class="form-group">
+    <label for="months" class="label">Months:</label>
+    <input [ngModel]="months" (ngModelChange)="onMonthsChange($event)" type="number" id="months" class="input" required>
+    <div *ngIf="!isValidInput(months)" class="error"></div>
   </div>
+  <div class="button-container">
+    <button (click)="calculateInvestment()" class="button">Calculate</button>
+  </div>
+  <div *ngIf="errorMessage; else result">
+    <p class="error">{{ errorMessage }}</p>
+  </div>
+  <ng-template #result>
+    <div class="results">
+      <p>Gross Result: {{ grossResult | currency:'USD':'symbol' }}</p>
+      <p [style.color]="netResult > 0 ? 'green' : 'inherit'">Net Result: {{ netResult | currency:'USD':'symbol' }}</p>
+    </div>
+  </ng-template>
 </div>
-
-
